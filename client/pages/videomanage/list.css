@@ -1,0 +1,20 @@
+.success{
+    padding:0 17.5px;
+    background-color:#389e0d;
+    border:none;
+    color:#fff;
+    white-space: nowrap;
+    line-height: 1.15;
+    font-size: 12px;
+    border-radius: 4px;
+    height: 28px;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 500;
+    text-align: center
+}
+.success:hover{
+    background-color:#52c41a;
+    color:#fff;
+    cursor: pointer;
+}

@@ -1,0 +1,11 @@
+<% 
+    if (item.$uiControl === 'DatePicker') {
+%>
+        initialValue: moment(item.<%= item.name %>),
+<%
+    } else {
+%>
+        initialValue: item.<%= item.name %>,
+<%
+}
+%>

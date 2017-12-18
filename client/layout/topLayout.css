@@ -1,0 +1,49 @@
+.header {
+    padding:0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+    margin-bottom: 5px;
+    display: flex;
+    align-items: flex-end;
+    height: 46px;
+    line-height: 46px;
+}
+
+.logo {
+    line-height: 46px;
+    font-size: 16px;
+    padding-left: 24px;
+    color: #108ee9;
+    width: 100px;
+}
+
+.nav {
+    flex: 1;
+    & :global(.ant-menu-horizontal) {
+        border-bottom-width: 0;
+    }
+}
+
+.tools {
+    width: 200px;
+    padding-right: 20px;
+}
+
+.breadcrumbWrapper {
+    margin: 0px 5px;
+    padding: 5px 10px;
+    background: #fff;
+    border-radius: 5px;
+}
+
+.trigger {
+    font-size: 20px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0 24px;
+    &:hover {
+        background: #e6f7ff;
+    }
+}
+

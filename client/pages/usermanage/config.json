@@ -1,0 +1,4 @@
+{
+    "stateKey": "usermanage",
+    "apis": { "get": "queryAllUsers", "searchUser": "searchUser","getDetail": "queryUserDetail" }
+}

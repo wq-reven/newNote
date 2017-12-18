@@ -1,0 +1,31 @@
+.person_detail {
+    background: rgba(242, 242, 242, 1);
+    & .detail_hearder {
+        height: 100px;
+        width: 100%;
+        margin-bottom: 10px;
+        background: rgba(215, 215, 215, 1);
+        & .userlogo {
+            width:100px;
+            height:100px;
+            float:left;
+        }
+        & .userInfo {
+            float: left;
+            padding: 20px 40px;
+            & .nickname{
+                font-size:24px;
+            }
+            & .uid{
+                font-size:15px;
+            }
+        }
+    }
+    & .detail_body{
+        padding:10px;
+        margin: 0px auto;
+        width:50%;
+        & .detail_info{
+        }
+    }
+}

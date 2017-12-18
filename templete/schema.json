@@ -1,0 +1,156 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {},
+    "id": "http://example.com/example.json",
+    "properties": {
+        "code": {
+            "default": 0,
+            "description": "An explanation about the purpose of this instance.",
+            "id": "/properties/code",
+            "title": "The code schema",
+            "type": "integer"
+        },
+        "data": {
+            "id": "/properties/data",
+            "properties": {
+                "list": {
+                    "id": "/properties/data/properties/list",
+                    "items": {
+                        "id": "/properties/data/properties/list/items",
+                        "properties": {
+                            "age": {
+                                "default": 18,
+                                "description": "An explanation about the purpose of this instance.",
+                                "exclusiveMaximum": true,
+                                "exclusiveMinimum": true,
+                                "id": "/properties/data/properties/list/items/properties/age",
+                                "maximum": 99,
+                                "minimum": 18,
+                                "title": "\u5e74\u9f84",
+                                "type": "integer"
+                            },
+                            "birthday": {
+                                "default": 1505959002423,
+                                "description": "An explanation about the purpose of this instance.",
+                                "id": "/properties/data/properties/list/items/properties/birthday",
+                                "title": "\u51fa\u751f\u65e5\u671f",
+                                "type": "integer",
+                                "extend": {
+                                    "type": "date"
+                                }
+                            },
+                            "lend": {
+                                "default": true,
+                                "description": "An explanation about the purpose of this instance.",
+                                "enum": [true, false],
+                                "id": "/properties/data/properties/list/items/properties/lend",
+                                "title": "借阅",
+                                "type": "boolean",
+                                "extend": {
+                                    "enum": [
+                                        {
+                                            "value": false,
+                                            "label": "是"
+                                        },
+                                        {
+                                            "value": true,
+                                            "label": "否"
+                                        }
+                                    ]
+                                }
+                            },
+                            "id": {
+                                "default": "user_1",
+                                "description": "An explanation about the purpose of this instance.",
+                                "id": "/properties/data/properties/list/items/properties/id",
+                                "title": "ID",
+                                "type": "string"
+                            },
+                            "name": {
+                                "default": "\u6ce1\u9762",
+                                "description": "An explanation about the purpose of this instance.",
+                                "id": "/properties/data/properties/list/items/properties/name",
+                                "maxLength": 8,
+                                "minLength": 2,
+                                "pattern": "/^[a-z]*$/",
+                                "title": "\u59d3\u540d",
+                                "type": "string"
+                            },
+                            "sex": {
+                                "id": "/properties/data/properties/list/items/properties/sex",
+                                "items": {
+                                    "default": 1,
+                                    "description": "An explanation about the purpose of this instance.",
+                                    "enum": [1, 2, 3],
+                                    "id": "/properties/data/properties/list/items/properties/sex/items",
+                                    "title": "分类",
+                                    "type": "integer",
+                                    "extend": {
+                                        "enum": [
+                                            {
+                                                "value": 1,
+                                                "label": "男"
+                                            },
+                                            {
+                                                "value": 2,
+                                                "label": "女"
+                                            },
+                                            {
+                                                "value": 3,
+                                                "label": "不告诉你"
+                                            }
+                                        ],
+                                        "type": "checkbox"
+                                    }
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "required": ["name", "birthday", "id", "sex", "age"],
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "pagination": {
+                    "id": "/properties/data/properties/pagination",
+                    "properties": {
+                        "current": {
+                            "default": 1,
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/data/properties/pagination/properties/current",
+                            "title": "\u5f53\u524d\u9875\u6570",
+                            "type": "integer"
+                        },
+                        "pageSize": {
+                            "default": 20,
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/data/properties/pagination/properties/pageSize",
+                            "title": "\u6bcf\u9875\u6761\u6570",
+                            "type": "integer"
+                        },
+                        "total": {
+                            "default": 100,
+                            "description": "An explanation about the purpose of this instance.",
+                            "id": "/properties/data/properties/pagination/properties/total",
+                            "title": "\u603b\u6761\u6570",
+                            "type": "integer"
+                        }
+                    },
+                    "required": ["pageSize", "total", "current"],
+                    "type": "object"
+                }
+            },
+            "required": ["list", "pagination"],
+            "type": "object"
+        },
+        "msg": {
+            "default": "ok",
+            "description": "An explanation about the purpose of this instance.",
+            "id": "/properties/msg",
+            "title": "The msg schema",
+            "type": "string"
+        }
+    },
+    "required": ["data", "code", "msg"],
+    "type": "object"
+}

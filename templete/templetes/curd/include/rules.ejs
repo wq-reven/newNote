@@ -1,0 +1,76 @@
+<%
+    const formatRequireMessage = item => {
+        if(item.$uiControl === 'Select' || item.$uiControl === 'DatePicker') {
+            return '请选择';
+        } else {
+            return '请填写';
+        }
+    }
+    const formatTypeMessage = item => {
+        if (item.type === 'integer') {
+            return '为整数';
+        } else {
+            return '为数字';
+        }
+    }
+%>
+<%  
+    if(item.rules.require) {
+%>
+    {
+        required: true,
+        message: '<%= formatRequireMessage(item) %><%= item.title %>',
+    },
+<%
+    }
+%>
+<% 
+    if(item.rules.max) {
+%>
+    {
+        max: <%= item.rules.max %>,
+        message: '最大长度为<%= item.rules.max %>',
+    },
+<%
+    }
+%>
+<% 
+    if(item.rules.min) {
+%>
+    {
+        min: <%= item.rules.min %>,
+        message: '最小长度为<%= item.rules.min %>',
+    },
+<%
+    }
+%>
+<% 
+    if(item.rules.pattern) {
+%>
+    {
+        pattern: <%- item.rules.pattern %>,
+        message: '正则校验异常',
+    },
+<%
+    }
+%>
+<% 
+    if(item.rules.validator) {
+%>
+    {
+        validator: <%- item.rules.validator %>,
+    },
+<%
+    }
+%>
+
+<% 
+if(item.$uiControl === 'InputNumber') {
+%>
+    {
+        type: '<%= item.type %>',
+        message: '<%= item.title %><%= formatTypeMessage(item) %>',
+    },
+<%
+}
+%>

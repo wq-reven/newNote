@@ -1,0 +1,236 @@
+{
+    "id": "$root",
+    "type": "object",
+    "properties": {
+        "code": {
+            "id": "$root/properties/code",
+            "type": "integer",
+            "title": "title of code",
+            "description": "desc of code",
+            "default": 0
+        },
+        "msg": {
+            "id": "$root/properties/msg",
+            "type": "string",
+            "description": "desc of msg",
+            "title": "title of msg",
+            "default": ""
+        },
+        "isOk": {
+            "id": "$root/properties/isOk",
+            "type": "boolean",
+            "title": "title of isOk",
+            "description": "desc of isOk",
+            "default": true,
+            "enum": [
+                true,
+                false
+            ],
+            "$uiEnum": [
+                {
+                    "label": "是",
+                    "value": true
+                },
+                {
+                    "label": "否",
+                    "value": false
+                }
+            ]
+        },
+        "data": {
+            "id": "$root/properties/data",
+            "type": "object",
+            "properties": {
+                "list": {
+                    "id": "$root/properties/data/properties/list",
+                    "type": "array",
+                    "items": {
+                        "id": "$root/properties/data/properties/list/items",
+                        "type": "object",
+                        "properties": {
+                            "vid": {
+                                "id": "$root/properties/data/properties/list/items/properties/vid",
+                                "type": "integer",
+                                "title": "视频ID",
+                                "description": "ewq",
+                                "default": 123
+                            },
+                            "title": {
+                                "id": "$root/properties/data/properties/list/items/properties/title",
+                                "type": "string",
+                                "description": "desc of title",
+                                "title": "视频标题",
+                                "default": "apple"
+                            },
+                            "musicUrl": {
+                                "id": "$root/properties/data/properties/list/items/properties/musicUrl",
+                                "type": "string",
+                                "description": "desc of musicUrl",
+                                "title": "背景音乐",
+                                "default": "ewe"
+                            },
+                            "challengeName": {
+                                "id": "$root/properties/data/properties/list/items/properties/challengeName",
+                                "type": "string",
+                                "description": "desc of challengement",
+                                "title": "挑战",
+                                "default": "ewqe"
+                            },
+                            "uid": {
+                                "id": "$root/properties/data/properties/list/items/properties/uid",
+                                "type": "string",
+                                "description": "desc of uid",
+                                "title": "发布人ID",
+                                "default": "2011"
+                            },
+                            "nickname": {
+                                "id": "$root/properties/data/properties/list/items/properties/nickname",
+                                "type": "string",
+                                "description": "desc of nickname",
+                                "title": "发布人昵称",
+                                "default": "de"
+                            },
+                            "publishTime": {
+                                "id": "$root/properties/data/properties/list/items/properties/publishTime",
+                                "type": "string",
+                                "description": "发布时间",
+                                "title": "title of publishTime",
+                                "default": "432",
+                                "$uiControl": "DatePicker"
+                            },
+                            "source": {
+                                "id": "$root/properties/data/properties/list/items/properties/source",
+                                "type": "string",
+                                "description": "desc of source",
+                                "title": "类别",
+                                "default": "leibie"
+                            },
+                            "cpName": {
+                                "id": "$root/properties/data/properties/list/items/properties/cpName",
+                                "type": "string",
+                                "description": "desc of cpName",
+                                "title": "视频来源",
+                                "default": "laiyuan"
+                            },
+                            "insertTime": {
+                                "id": "$root/properties/data/properties/list/items/properties/insertTime",
+                                "type": "string",
+                                "description": "desc of insertTime",
+                                "title": "添加时间",
+                                "default": "324",
+                                "$uiControl": "DatePicker"
+                            },
+                            "playCount": {
+                                "id": "$root/properties/data/properties/list/items/properties/playCount",
+                                "type": "integer",
+                                "title": "播放次数",
+                                "description": "desc of playCount",
+                                "default": 0,
+                                "$uiIsSort": true
+                            },
+                            "likeCount": {
+                                "id": "$root/properties/data/properties/list/items/properties/likeCount",
+                                "type": "integer",
+                                "title": "获赞数",
+                                "description": "desc of likeCount",
+                                "default": 0,
+                                "$uiIsSort": true
+                            },
+                            // "status": {
+                            //     "id": "$root/properties/data/properties/list/items/properties/status",
+                            //     "type": "",
+                            //     "title": "状态",
+                            //     "description": "desc of status",
+                            //     "default": 0,
+                            //     "$uiControl": "Select",
+                            //     "$uiEnum": [
+                            //         {
+                            //             "label": "下线",
+                            //             "value": 0
+                            //         },
+                            //         {
+                            //             "label": "上线",
+                            //             "value": 1
+                            //         },
+                            //         {
+                            //             "label": "未审核",
+                            //             "value": 2
+                            //         },
+                            //         {
+                            //             "label": "处理中",
+                            //             "value": 3
+                            //         },
+                            //         {
+                            //             "label": "出错",
+                            //             "value": 4
+                            //         },
+                            //         {
+                            //             "label": "审核未通过",
+                            //             "value": 5
+                            //         },
+                            //         {
+                            //             "label": "已删除",
+                            //             "value": 6
+                            //         }
+                            //     ],
+                            //     "enum": [
+                            //         0,
+                            //         1,
+                            //         2,
+                            //         3,
+                            //         4,
+                            //         5,
+                            //         6
+                            //     ]
+                            // },
+                            "status": {
+                                "id": "$root/properties/data/properties/list/items/properties/status",
+                                "type": "integer",
+                                "title": "状态",
+                                "description": "desc of status",
+                                "default": 0,
+                                "$uiControl": "Select"
+                            },
+                            "VideoPlayUrl": {
+                                "id": "$root/properties/data/properties/list/items/properties/VideoPlayUrl",
+                                "type": "string",
+                                "description": "desc of mediaFiles.VideoPlayUrl",
+                                "title": "视频播放地址",
+                                "default": "32"
+                            }
+                        }
+                    }
+                },
+                "pagination": {
+                    "id": "$root/properties/data/properties/pagination",
+                    "type": "object",
+                    "properties": {
+                        "current": {
+                            "id": "$root/properties/data/properties/pagination/properties/current",
+                            "type": "integer",
+                            "title": "title of current",
+                            "description": "desc of current",
+                            "default": 1
+                        },
+                        "total": {
+                            "id": "$root/properties/data/properties/pagination/properties/total",
+                            "type": "integer",
+                            "title": "title of total",
+                            "description": "desc of total",
+                            "default": 100
+                        },
+                        "pageSize": {
+                            "id": "$root/properties/data/properties/pagination/properties/pageSize",
+                            "type": "integer",
+                            "title": "title of pageSize",
+                            "description": "desc of pageSize",
+                            "default": 20
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "definitions": {}
+}

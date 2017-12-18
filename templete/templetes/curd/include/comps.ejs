@@ -1,0 +1,36 @@
+<%
+const initAntComp = list => {
+    let result = {};
+    list.forEach(item => {
+        switch (item.$uiControl) {
+            case 'DatePicker':
+                result.DatePicker = 1;
+                break;
+            case 'Checkbox':
+                result.Checkbox = 1;
+                break;
+            case 'Select':
+                result.Select = 1;
+                break;
+            case 'InputNumber':
+                result.InputNumber = 1;
+                break;
+            case 'Input':
+            default:
+                result.Input = 1;
+        }
+    });
+    return result;
+}
+%>
+<% 
+    const components = initAntComp(list) 
+%>
+import { <%= Object.keys(components).join(',') %> } from 'antd';
+<% if (components.DatePicker) { %>
+import moment from 'moment';
+<% } %>
+<% if (components.Checkbox) { %>
+const CheckboxGroup = Checkbox.Group;
+<% } %>
+

@@ -1,0 +1,22 @@
+.c_list {
+    margin: 20px 0 0 0;
+    & .avatar_column {
+        padding: 0px 8px;
+    }
+}
+.user_avatar{
+    width:50px;
+    height:50px;
+    transition:All 0.3s ease-in-out;
+    -webkit-transition:All 0.3s ease-in-out;
+    -moz-transition:All 0.3s ease-in-out;
+    -o-transition:All 0.3s ease-in-out;
+}
+.user_avatar:hover{
+    cursor:pointer;
+    transform:scale(3);
+    -webkit-transform:scale(3);
+    -moz-transform:scale(3);
+    -o-transform:scale(3);
+    -ms-transform:scale(3);
+}

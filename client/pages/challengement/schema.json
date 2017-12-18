@@ -1,0 +1,121 @@
+{
+    "id": "$root",
+    "type": "object",
+    "properties": {
+        "code": {
+            "id": "$root/properties/code",
+            "type": "integer",
+            "title": "title of code",
+            "description": "desc of code",
+            "default": 0
+        },
+        "msg": {
+            "id": "$root/properties/msg",
+            "type": "string",
+            "description": "desc of msg",
+            "title": "title of msg",
+            "default": ""
+        },
+        "isOk": {
+            "id": "$root/properties/isOk",
+            "type": "boolean",
+            "title": "title of isOk",
+            "description": "desc of isOk",
+            "default": true,
+            "enum": [
+                true,
+                false
+            ],
+            "$uiEnum": [
+                {
+                    "label": "是",
+                    "value": true
+                },
+                {
+                    "label": "否",
+                    "value": false
+                }
+            ]
+        },
+        "data": {
+            "id": "$root/properties/data",
+            "type": "object",
+            "properties": {
+                "list": {
+                    "id": "$root/properties/data/properties/list",
+                    "type": "array",
+                    "items": {
+                        "id": "$root/properties/data/properties/list/items",
+                        "type": "object",
+                        "properties": {
+                            "challengeId": {
+                                "id": "$root/properties/data/properties/list/items/properties/challengeId",
+                                "type": "integer",
+                                "title": "id",
+                                "description": "desc of challengeId",
+                                "default": 123
+                            },
+                            "challengeName": {
+                                "id": "$root/properties/data/properties/list/items/properties/challengeName",
+                                "type": "string",
+                                "description": "desc of challengeName",
+                                "title": "挑战名称",
+                                "default": "apple"
+                            },
+                            "videoNum": {
+                                "id": "$root/properties/data/properties/list/items/properties/videoNum",
+                                "type": "integer",
+                                "title": "作品数",
+                                "description": "desc of videoNum",
+                                "default": 0
+                            },
+                            "userNum": {
+                                "id": "$root/properties/data/properties/list/items/properties/userNum",
+                                "type": "integer",
+                                "title": "参与人数",
+                                "description": "desc of userNum",
+                                "default": 0
+                            },
+                            "creator": {
+                                "id": "$root/properties/data/properties/list/items/properties/creator",
+                                "type": "string",
+                                "description": "desc of creator",
+                                "title": "添加人",
+                                "default": "ewee"
+                            }
+                        }
+                    }
+                },
+                "pagination": {
+                    "id": "$root/properties/data/properties/pagination",
+                    "type": "object",
+                    "properties": {
+                        "current": {
+                            "id": "$root/properties/data/properties/pagination/properties/current",
+                            "type": "integer",
+                            "title": "title of current",
+                            "description": "desc of current",
+                            "default": 1
+                        },
+                        "total": {
+                            "id": "$root/properties/data/properties/pagination/properties/total",
+                            "type": "integer",
+                            "title": "title of total",
+                            "description": "desc of total",
+                            "default": 100
+                        },
+                        "pageSize": {
+                            "id": "$root/properties/data/properties/pagination/properties/pageSize",
+                            "type": "integer",
+                            "title": "title of pageSize",
+                            "description": "desc of pageSize",
+                            "default": 20
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "definitions": {}
+}

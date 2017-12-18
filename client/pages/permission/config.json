@@ -1,0 +1,4 @@
+{
+    "stateKey": "permission",
+    "apis": { "get": "queryAllUsers", "del": "booksdel", "update": "booksupdate", "add": "booksadd" }
+}

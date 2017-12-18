@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>demo</title>
+<style>
+    #root .ant-layout{
+        background: #fff;
+    }
+
+    .ant-layout-content{
+        padding: 0 10px;
+    }
+</style>
+</head>
+<body>
+    <script>
+        window.userInfo = {
+            userId: 1512635519881,
+            nickname: 'zhujian',
+            auth: '1',
+            roles: 2,
+            token: 'dsada',
+        };
+    </script>
+    <div id="root" style="display: flex; min-height: 100%;"></div>
+    <script type="text/javascript" src="<%= htmlWebpackPlugin.options.bundleUrl %>"></script>
+</body>
+</html>

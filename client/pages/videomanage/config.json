@@ -1,0 +1,4 @@
+{
+    "stateKey": "videomanage",
+    "apis": { "get": "queryAllUsers", "del": "booksdel", "update": "booksupdate", "add": "booksadd" }
+}

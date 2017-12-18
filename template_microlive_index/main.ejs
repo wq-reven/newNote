@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>小视频管理系统</title>
+    <script src="//p1.ifengimg.com/a/2017/0920/jquery.min.js"></script>
+    <style>
+        #root .ant-layout {
+            background: #fff;
+        }
+
+        .ant-layout-content {
+            padding: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <% if ( allow == true) { %>
+        <script>
+            window.userInfo = {
+                userId: '<%=userId%>',
+                nickname: '<%=nickname%>',
+                auth: '<%=auth%>',
+                roles: '<%=roles%>',
+                token: 'dsada',
+            };
+        </script>
+        <div id="root" style="display: flex; min-height: 100%;"></div>
+        <script type="text/javascript" src="//p0.ifengimg.com/fe/zl/test/live/microlive_management/bundle.dbe13.js"></script>
+        <script type="text/javascript" src="//p0.ifengimg.com/fe/zl/test/live/microlive_management/manifest.d41d8.js"></script>
+        <script type="text/javascript" src="//p0.ifengimg.com/fe/zl/test/live/microlive_management/index.8a1de.js"></script>
+        <% } else { %>
+            <h1>对不起您没有权限登录</h1>
+            <% } %>
+</body>
+
+</html>

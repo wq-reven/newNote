@@ -1,0 +1,162 @@
+{
+    "id": "$root",
+    "type": "object",
+    "properties": {
+        "code": {
+            "id": "$root/properties/code",
+            "type": "integer",
+            "title": "title of code",
+            "description": "desc of code",
+            "default": 0
+        },
+        "msg": {
+            "id": "$root/properties/msg",
+            "type": "string",
+            "description": "desc of msg",
+            "title": "title of msg",
+            "default": ""
+        },
+        "isOk": {
+            "id": "$root/properties/isOk",
+            "type": "boolean",
+            "title": "title of isOk",
+            "description": "desc of isOk",
+            "default": true,
+            "enum": [
+                true,
+                false
+            ],
+            "$uiEnum": [
+                {
+                    "label": "是",
+                    "value": true
+                },
+                {
+                    "label": "否",
+                    "value": false
+                }
+            ]
+        },
+        "data": {
+            "id": "$root/properties/data",
+            "type": "object",
+            "properties": {
+                "list": {
+                    "id": "$root/properties/data/properties/list",
+                    "type": "array",
+                    "items": {
+                        "id": "$root/properties/data/properties/list/items",
+                        "type": "object",
+                        "properties": {
+                            "orderNumber": {
+                                "id": "$root/properties/data/properties/list/items/properties/orderNumber",
+                                "type": "integer",
+                                "title": "序号",
+                                "description": "desc of orderNumber",
+                                "default": 1,
+                                "$require": true,
+                                "$uiIsSort": true
+                            },
+                            "uid": {
+                                "id": "$root/properties/data/properties/list/items/properties/id",
+                                "type": "integer",
+                                "title": "ID",
+                                "description": "desc of id",
+                                "$require": true,
+                                "default": 111
+                            },
+                            "nickname": {
+                                "id": "$root/properties/data/properties/list/items/properties/nickName",
+                                "type": "string",
+                                "description": "desc of nickName",
+                                "title": "昵称",
+                                "default": "apple"
+                            },
+                            "followNum": {
+                                "id": "$root/properties/data/properties/list/items/properties/followNum",
+                                "type": "integer",
+                                "title": "关注数",
+                                "description": "desc of followNum",
+                                "default": 0,
+                                "$uiIsSort": true
+                            },
+                            "fansNum": {
+                                "id": "$root/properties/data/properties/list/items/properties/fansNum",
+                                "type": "integer",
+                                "title": "粉丝数",
+                                "description": "desc of fansNum",
+                                "default": 0,
+                                "$uiIsSort": true
+                            },
+                            "likeNum": {
+                                "id": "$root/properties/data/properties/list/items/properties/likeNum",
+                                "type": "integer",
+                                "title": "获赞数",
+                                "description": "desc of likeNum",
+                                "default": 0,
+                                "$uiIsSort": true
+                            },
+                            "producedVideoNum": {
+                                "id": "$root/properties/data/properties/list/items/properties/producedVideoNum",
+                                "type": "integer",
+                                "title": "作品数",
+                                "description": "desc of producedVideoNum",
+                                "default": 0,
+                                "$uiIsSort": true
+                            },
+                            "registerTime": {
+                                "id": "$root/properties/data/properties/list/items/properties/registerTime",
+                                "type": "string",
+                                "description": "desc of registerTime",
+                                "title": "注册时间",
+                                "default": "2012-12-01",
+                                "$uiControl": "DatePicker",
+                                "$uiIsSort": true
+                            },
+                            "operation": {
+                                "id": "$root/properties/data/properties/list/items/properties/operation",
+                                "type": "string",
+                                "description": "desc of operation",
+                                "title": "操作",
+                                "default": "详细"
+                            }
+                        },
+                        "required": [
+                            "orderNumber",
+                            "id"
+                        ]
+                    }
+                },
+                "pagination": {
+                    "id": "$root/properties/data/properties/pagination",
+                    "type": "object",
+                    "properties": {
+                        "current": {
+                            "id": "$root/properties/data/properties/pagination/properties/current",
+                            "type": "integer",
+                            "title": "title of current",
+                            "description": "desc of current",
+                            "default": 1
+                        },
+                        "total": {
+                            "id": "$root/properties/data/properties/pagination/properties/total",
+                            "type": "integer",
+                            "title": "title of total",
+                            "description": "desc of total",
+                            "default": 100
+                        },
+                        "pageSize": {
+                            "id": "$root/properties/data/properties/pagination/properties/pageSize",
+                            "type": "integer",
+                            "title": "title of pageSize",
+                            "description": "desc of pageSize",
+                            "default": 20
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "definitions": {}
+}

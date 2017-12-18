@@ -1,0 +1,4 @@
+{
+    "stateKey": "reportmanage",
+    "apis": { "get": "", "del": "booksdel", "update": "booksupdate", "add": "booksadd" }
+}

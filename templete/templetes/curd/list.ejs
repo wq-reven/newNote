@@ -1,0 +1,97 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { Table, Spin, Popconfirm } from 'antd';
+const { Column } = Table;
+import { actions, asyncGet, asyncDel } from './models';
+import { formatViewData } from './utils';
+
+class List extends React.Component {
+    componentDidMount() {
+        this.props.asyncGet();
+    }
+    viewHandler = id => {
+        this.props.viewShow();
+        this.props.changeCurrentSelectId(id);
+    };
+    editHandler = id => {
+        this.props.editShow();
+        this.props.changeCurrentSelectId(id);
+    };
+    changeHandle = (pagination, filters, sorter) => {
+        this.props.changePagination(pagination);
+        this.props.changeSort({ key: sorter.field, order: sorter.order });
+        this.props.asyncGet();
+    };
+    renderAction = (text, record) => (
+        <span>
+            <a
+                href="#"
+                onClick={() => {
+                    this.viewHandler(record.id);
+                }}>
+                查看
+            </a>
+            <span className="ant-divider" />
+            <a
+                href="#"
+                onClick={() => {
+                    this.editHandler(record.id);
+                }}>
+                编辑
+            </a>
+            <span className="ant-divider" />
+            <Popconfirm
+                title="确定删除该条信息？"
+                okText="确定删除"
+                cancelText="取消删除"
+                onConfirm={() => {
+                    this.props.asyncDel(record.id);
+                }}>
+                <a href="#">删除</a>
+            </Popconfirm>
+        </span>
+    );
+    render() {
+        const { isLoading, list, pagination } = this.props;
+        return (
+            <Spin spinning={isLoading} tip='加载中...'>
+                <Table
+                    dataSource={list}
+                    pagination={{
+                        ...pagination,
+                    }}
+                    onChange={this.changeHandle}>
+                    <%
+                        for(let item of list) { 
+                    %>
+                    <Column title="<%= item.title %>" dataIndex="<%= item.name %>" key="<%= item.name %>" sorter={<%= item.isSort %>} render={text => {
+                        return formatViewData('<%= item.name %>', text);
+                    }}/>
+                    <%
+                        }
+                    %>
+                    <Column title="操作" key="action" render={this.renderAction} />
+                </Table>
+            </Spin>
+        );
+    }
+}
+
+const mapStateToProps = state => ({
+    list: state.<%= stateKey %>.list,
+    isLoading: state.<%= stateKey %>.uiStatus.isLoading,
+    pagination: state.<%= stateKey %>.pagination,
+});
+
+const mapDispatchToProps = dispatch => ({
+    asyncGet: () => dispatch(asyncGet()),
+    asyncDel: id => dispatch(asyncDel(id)),
+    viewShow: () => dispatch(actions.changeUiStatus({ isViewShow: true })),
+    addShow: () => dispatch(actions.changeUiStatus({ isAddShow: true })),
+    editShow: () => dispatch(actions.changeUiStatus({ isUpdateShow: true })),
+    changeCurrentSelectId: id => dispatch(actions.changeCurrentSelectId(id)),
+    changePagination: pagination => dispatch(actions.changePagination(pagination)),
+    changeSort: data => dispatch(actions.changeSort(data)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(List);

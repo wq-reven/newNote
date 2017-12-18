@@ -1,0 +1,4 @@
+{
+    "stateKey": "userexamine",
+    "apis": { "get": "queryallEditUser", "searchUser": "searchEditUser" }
+}

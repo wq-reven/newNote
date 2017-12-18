@@ -1,0 +1,133 @@
+{
+    "id": "$root",
+    "type": "object",
+    "properties": {
+        "code": {
+            "id": "$root/properties/code",
+            "type": "integer",
+            "title": "title of code",
+            "description": "desc of code",
+            "default": 0
+        },
+        "msg": {
+            "id": "$root/properties/msg",
+            "type": "string",
+            "description": "desc of msg",
+            "title": "title of msg",
+            "default": ""
+        },
+        "isOk": {
+            "id": "$root/properties/isOk",
+            "type": "boolean",
+            "title": "title of isOk",
+            "description": "desc of isOk",
+            "default": true,
+            "enum": [
+                true,
+                false
+            ],
+            "$uiEnum": [
+                {
+                    "label": "是",
+                    "value": true
+                },
+                {
+                    "label": "否",
+                    "value": false
+                }
+            ]
+        },
+        "data": {
+            "id": "$root/properties/data",
+            "type": "object",
+            "properties": {
+                "list": {
+                    "id": "$root/properties/data/properties/list",
+                    "type": "array",
+                    "items": {
+                        "id": "$root/properties/data/properties/list/items",
+                        "type": "object",
+                        "properties": {
+                            "mid": {
+                                "id": "$root/properties/data/properties/list/items/properties/mid",
+                                "type": "integer",
+                                "title": "消息ID",
+                                "description": "desc of mid",
+                                "default": 123
+                            },
+                            "content": {
+                                "id": "$root/properties/data/properties/list/items/properties/content",
+                                "type": "string",
+                                "description": "desc of content",
+                                "title": "消息内容",
+                                "default": "apple"
+                            },
+                            "type": {
+                                "id": "$root/properties/data/properties/list/items/properties/type",
+                                "type": "integer",
+                                "title": "类型",
+                                "description": "desc of type",
+                                "default": 0,
+                                "$uiControl": "Select",
+                                "$uiEnum": [
+                                    {
+                                        "label": "官方公告",
+                                        "value": 0
+                                    }
+                                ],
+                                "enum": [
+                                    0
+                                ]
+                            },
+                            "startTime": {
+                                "id": "$root/properties/data/properties/list/items/properties/startTime",
+                                "type": "string",
+                                "description": "desc of startTime",
+                                "title": "开始时间",
+                                "default": "234",
+                                "$uiControl": "DatePicker"
+                            },
+                            "endTime": {
+                                "id": "$root/properties/data/properties/list/items/properties/endTime",
+                                "type": "string",
+                                "description": "desc of endTime",
+                                "title": "结束时间",
+                                "default": "20111",
+                                "$uiControl": "DatePicker"
+                            }
+                        }
+                    }
+                },
+                "pagination": {
+                    "id": "$root/properties/data/properties/pagination",
+                    "type": "object",
+                    "properties": {
+                        "current": {
+                            "id": "$root/properties/data/properties/pagination/properties/current",
+                            "type": "integer",
+                            "title": "title of current",
+                            "description": "desc of current",
+                            "default": 1
+                        },
+                        "total": {
+                            "id": "$root/properties/data/properties/pagination/properties/total",
+                            "type": "integer",
+                            "title": "title of total",
+                            "description": "desc of total",
+                            "default": 100
+                        },
+                        "pageSize": {
+                            "id": "$root/properties/data/properties/pagination/properties/pageSize",
+                            "type": "integer",
+                            "title": "title of pageSize",
+                            "description": "desc of pageSize",
+                            "default": 20
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "definitions": {}
+}

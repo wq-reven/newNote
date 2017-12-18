@@ -1,0 +1,11 @@
+{
+    "name":"microlive_index",
+    "type":"template",
+    "main":"./main.js",
+    "template":"./main.ejs",
+    "matchPath":"microlive-index",
+    "fileType" :"template",
+    "devices": "pc",
+    "extra" : "",
+    "ui":{"base":"./ui"}
+}

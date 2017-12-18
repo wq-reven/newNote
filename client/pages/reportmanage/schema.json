@@ -1,0 +1,163 @@
+{
+    "id": "$root",
+    "type": "object",
+    "properties": {
+        "code": {
+            "id": "$root/properties/code",
+            "type": "integer",
+            "title": "title of code",
+            "description": "desc of code",
+            "default": 0
+        },
+        "msg": {
+            "id": "$root/properties/msg",
+            "type": "string",
+            "description": "desc of msg",
+            "title": "title of msg",
+            "default": ""
+        },
+        "isOk": {
+            "id": "$root/properties/isOk",
+            "type": "boolean",
+            "title": "title of isOk",
+            "description": "desc of isOk",
+            "default": true,
+            "enum": [
+                true,
+                false
+            ],
+            "$uiEnum": [
+                {
+                    "label": "是",
+                    "value": true
+                },
+                {
+                    "label": "否",
+                    "value": false
+                }
+            ]
+        },
+        "data": {
+            "id": "$root/properties/data",
+            "type": "object",
+            "properties": {
+                "list": {
+                    "id": "$root/properties/data/properties/list",
+                    "type": "array",
+                    "items": {
+                        "id": "$root/properties/data/properties/list/items",
+                        "type": "object",
+                        "properties": {
+                            "informer": {
+                                "id": "$root/properties/data/properties/list/items/properties/informer",
+                                "type": "integer",
+                                "title": "举报人ID",
+                                "description": "desc of informer",
+                                "default": 123
+                            },
+                            "wrongdoer": {
+                                "id": "$root/properties/data/properties/list/items/properties/wrongdoer",
+                                "type": "integer",
+                                "title": "被举报人ID",
+                                "description": "desc of wrongdoer",
+                                "default": 123
+                            },
+                            "reportContent": {
+                                "id": "$root/properties/data/properties/list/items/properties/reportContent",
+                                "type": "integer",
+                                "title": "举报内容",
+                                "description": "desc of reportContent",
+                                "default": 1,
+                                "$uiControl": "Select",
+                                "$uiEnum": [
+                                    {
+                                        "label": "视频",
+                                        "value": 0
+                                    },
+                                    {
+                                        "label": "用户",
+                                        "value": 1
+                                    }
+                                ],
+                                "enum": [
+                                    0,
+                                    1
+                                ]
+                            },
+                            "reportType": {
+                                "id": "$root/properties/data/properties/list/items/properties/reportType",
+                                "type": "integer",
+                                "title": "举报类型",
+                                "description": "desc of reportType",
+                                "default": 0,
+                                "$uiControl": "Select",
+                                "$uiEnum": [
+                                    {
+                                        "label": "违法违规",
+                                        "value": 0
+                                    },
+                                    {
+                                        "label": "淫秽色情",
+                                        "value": 1
+                                    },
+                                    {
+                                        "label": "低俗内容",
+                                        "value": 2
+                                    },
+                                    {
+                                        "label": "垃圾广告",
+                                        "value": 3
+                                    }
+                                ],
+                                "enum": [
+                                    0,
+                                    1,
+                                    2,
+                                    3
+                                ]
+                            },
+                            "reportTime": {
+                                "id": "$root/properties/data/properties/list/items/properties/reportTime",
+                                "type": "string",
+                                "description": "desc of reportTime",
+                                "title": "举报时间",
+                                "default": "2011-11-11",
+                                "$uiControl": "DatePicker",
+                                "$uiIsSort": true
+                            }
+                        }
+                    }
+                },
+                "pagination": {
+                    "id": "$root/properties/data/properties/pagination",
+                    "type": "object",
+                    "properties": {
+                        "current": {
+                            "id": "$root/properties/data/properties/pagination/properties/current",
+                            "type": "integer",
+                            "title": "title of current",
+                            "description": "desc of current",
+                            "default": 1
+                        },
+                        "total": {
+                            "id": "$root/properties/data/properties/pagination/properties/total",
+                            "type": "integer",
+                            "title": "title of total",
+                            "description": "desc of total",
+                            "default": 100
+                        },
+                        "pageSize": {
+                            "id": "$root/properties/data/properties/pagination/properties/pageSize",
+                            "type": "integer",
+                            "title": "title of pageSize",
+                            "description": "desc of pageSize",
+                            "default": 20
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "definitions": {}
+}

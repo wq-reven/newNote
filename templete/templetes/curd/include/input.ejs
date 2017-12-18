@@ -1,0 +1,88 @@
+<%
+switch(item.$uiControl) {
+    case 'InputNumber':
+%>
+    <InputNumber  placeholder="请填写" style={{ width: '100%' }}
+    <%
+        if (onchange) {
+    %>
+        onChange={value => {
+            this.update(value, '<%= item.name %>', index);
+        }}
+    <%
+        }
+    %>
+    />
+<%
+    break;
+    case 'Select':
+%>
+    <Select style={{ width: '100%' }}  placeholder="请选择"
+    <%
+        if (onchange) {
+    %>
+        onChange={value => {
+            this.update(value, '<%= item.name %>', index);
+        }}
+    <%
+        }
+    %>
+    >
+        <%
+            for (let i = 0; i < item.$uiEnum.length; i++) {
+        %>
+        <Option value={<%- JSON.stringify(item.$uiEnum[i].value) %>}><%= item.$uiEnum[i].label %></Option>
+        <%      
+            }
+        %>
+    </Select>,
+<%
+    break;
+    case 'DatePicker':
+%>
+    <DatePicker style={{ width: '100%' }}  placeholder="请选择" 
+    <%
+        if (onchange) {
+    %>
+        onChange={value => {
+            this.update(value, '<%= item.name %>', index);
+        }}
+    <%
+        }
+    %>
+    />
+<%
+    break;
+    case 'Checkbox':
+%>
+    <CheckboxGroup options={<%-JSON.stringify(item.$uiEnum) %>}
+    <%
+        if (onchange) {
+    %>
+        onChange={value => {
+            this.update(value, '<%= item.name %>', index);
+        }}
+    <%
+        }
+    %>
+    />    
+<%
+    break;
+    case 'Input':
+    default:
+%>
+    <Input  placeholder="请填写" 
+    <%
+        if (onchange) {
+    %>
+        onChange={e => {
+            this.update(e.target.value, '<%= item.name %>', index);
+        }}
+    <%
+        }
+    %>    
+    />
+<%
+    break;
+}
+%>
